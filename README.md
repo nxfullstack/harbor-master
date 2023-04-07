@@ -1,0 +1,134 @@
+<br/>
+<p align="center">
+  <a href="https://github.com/@nx-fullstack/harbor-master">
+    <img src="images/cover.png" alt="Logo" height="120">
+  </a>
+
+  <p align="center">
+    Easily add a shared style library to your Nx monorepo
+    <br/>
+    <br/>
+    <a href="https://github.com/@nx-fullstack/harbor-master"><strong>Explore the docs »</strong></a>
+    <br/>
+    <br/>
+    <a href="https://github.com/@nx-fullstack/harbor-master">View Demo</a>
+    .
+    <a href="https://github.com/@nx-fullstack/harbor-master/issues">Report Bug</a>
+    .
+    <a href="https://github.com/@nx-fullstack/harbor-master/issues">Request Feature</a>
+  </p>
+</p>
+
+![Downloads](https://img.shields.io/github/downloads/nxfullstack/harbor-master/total) ![Contributors](https://img.shields.io/github/contributors/nxfullstack/harbor-master?color=dark-green) ![Issues](https://img.shields.io/github/issues/nxfullstack/harbor-master) ![License](https://img.shields.io/github/license/nxfullstack/harbor-master) ![Build Status](https://img.shields.io/github/actions/workflow/status/nxfullstack/harbor-master/ci.yml?branch=main) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e5079.svg)](https://github.com/semantic-release/semantic-release) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+## Table Of Contents
+
+- [About the Project](#about-the-project)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Authors](#authors)
+- [Acknowledgements](#acknowledgements)
+
+## About The Project
+
+![Screen Shot](images/screenshot.png)
+
+Many full-stack applications
+
+## Built With
+
+This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+- [Nx](https://nx.dev)
+- [Stylelint](https://github.com/stylelint/stylelint)
+
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+- npm
+
+```sh
+npm install npm@latest -g
+```
+
+### Installation
+
+1. Get a free API Key at [https://example.com](https://example.com)
+
+2. Clone the repo
+
+```sh
+git clone https://github.com/your_username_/Project-Name.git
+```
+
+3. Install NPM packages
+
+```sh
+npm install
+```
+
+4. Enter your API in `config.js`
+
+```JS
+const API_KEY = 'ENTER YOUR API';
+```
+
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+## Roadmap
+
+See the [open issues](https://github.com/@nx-fullstack/harbor-master/issues) for a list of proposed features (and known issues).
+
+### Creating A Pull Request
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/@nx-fullstack/harbor-master/blob/main/LICENSE.md) for more information.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://thefullstack.engineer/"><img src="https://avatars.githubusercontent.com/u/5431570?v=4?s=100" width="100px;" alt="Wallace Daniel"/><br /><sub><b>Wallace Daniel</b></sub></a><br /><a href="https://github.com/@nx-fullstack/harbor-master/commits?author=wgd3" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Acknowledgements
+
+- [ImgShields](https://shields.io/)
