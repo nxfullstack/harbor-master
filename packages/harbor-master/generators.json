@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "harbor-master",
+  "version": "0.0.1",
+  "generators": {
+    "harbor-master": {
+      "factory": "./src/generators/harbor-master/generator",
+      "schema": "./src/generators/harbor-master/schema.json",
+      "description": "harbor-master generator"
+    }
+  }
+}

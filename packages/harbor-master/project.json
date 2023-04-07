@@ -1,0 +1,67 @@
+{
+  "name": "harbor-master",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/harbor-master/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/harbor-master",
+        "main": "packages/harbor-master/src/index.ts",
+        "tsConfig": "packages/harbor-master/tsconfig.lib.json",
+        "assets": [
+          "packages/harbor-master/*.md",
+          {
+            "input": "./packages/harbor-master/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/harbor-master/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/harbor-master",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/harbor-master",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/harbor-master/**/*.ts",
+          "packages/harbor-master/generators.json",
+          "packages/harbor-master/executors.json",
+          "packages/harbor-master/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/harbor-master/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

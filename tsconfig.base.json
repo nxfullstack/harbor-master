@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@harbor-master/harbor-master": ["packages/harbor-master/src/index.ts"]
+      "@harbor-master/harbor-master": ["packages/harbor-master/src/index.ts"],
+      "@nx-fullstack/harbor-master": ["packages/harbor-master/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
