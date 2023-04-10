@@ -44,6 +44,13 @@ module.exports = {
       },
     ],
     [
+      '@semantic-release/changelog',
+      {
+        changelogFile: 'CHANGELOG.md',
+      },
+    ],
+    'semantic-release-license',
+    [
       '@semantic-release/npm',
       {
         pkgRoot: 'dist/packages/harbor-master',
@@ -62,16 +69,17 @@ module.exports = {
         assets: ['dist/packages/harbor-master/*.tgz'],
       },
     ],
-    [
-      '@semantic-release/changelog',
-      {
-        changelogFile: 'CHANGELOG.md',
-      },
-    ],
+
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.md'],
+        assets: [
+          'package.json',
+          'CHANGELOG.md',
+          'LICENSE',
+          'packages/harbor-master/package.json',
+          'yarn.lock',
+        ],
       },
     ],
   ],
