@@ -1,6 +1,32 @@
 {
   "name": "@nx-fullstack/harbor-master",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nxfullstack/harbor-master"
+  },
+  "keywords": [
+    "Nx",
+    "monorepo",
+    "plugin",
+    "rest-api"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Wallace Daniel",
+    "email": "wallace@thefullstack.engineer",
+    "url": "https://thefullstack.engineer"
+  },
+  "homepage": "https://nxfullstack.github.io/harbor-master",
+  "bugs": {
+    "url": "https://nxfullstack.github.io/harbor-master/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^16.0.0 || >= 18.0.0"
+  },
   "main": "src/index.js",
   "generators": "./generators.json",
   "executors": "./executors.json",
