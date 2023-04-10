@@ -46,6 +46,7 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
     ...names(options.name),
     offsetFromRoot: offsetFromRoot(options.projectRoot),
     template: '',
+    resourceName: options.resourceName,
   };
   generateFiles(
     tree,
@@ -55,6 +56,27 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
   );
 }
 
+/**
+ * Create a new, basic library containing route definitions for a REST API
+ *
+ * @category Generators
+ *
+ * @name library
+ *
+ * @example
+ *
+ * $ nx g @nx-fullstack/harbor-master:library util-routing \
+ * > --directory shared \
+ * > --resourceName users \
+ * > --tags type:util,scope:shared \
+ * > --baseUrl /api/v1
+ *
+ * @export
+ * @async
+ * @param {Tree} tree
+ * @param {HarborMasterGeneratorSchema} options
+ * @returns {*}
+ */
 export default async function (
   tree: Tree,
   options: HarborMasterGeneratorSchema

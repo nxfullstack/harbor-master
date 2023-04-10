@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/harbor-master/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/icon.svg',
+  favicon: 'img/favicon.ico',
   organizationName: '@nx-fullstack',
   projectName: 'harbor-master',
 
@@ -40,7 +40,7 @@ const config = {
         title: 'Home',
         logo: {
           alt: 'harbor-master',
-          src: 'img/icon.svg',
+          src: 'img/icon-512.png',
         },
         items: [
           {

@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "HarborMaster",
+  "title": "Create a shared library for defining REST API routes",
+  "description": "Create a shared library for defining REST API routes",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?",
+      "pattern": "^[a-zA-Z].*$"
+    },
+    "resourceName": {
+      "type": "string",
+      "description": "REST API endpoints should use a pluralized version of the resource name at a given endpoint. If provided, the resource name will be used for route definitions.",
+      "default": "todos"
+    },
+    "baseUrl": {
+      "type": "string",
+      "description": "If your API has versioned endpoints (such as `/api/v1`) then that should be added here.",
+      "default": "/"
+    },
+    "tags": {
+      "type": "string",
+      "description": "Add tags to the project (used for linting)",
+      "alias": "t"
+    },
+    "directory": {
+      "type": "string",
+      "description": "A directory where the project is placed"
+    }
+  },
+  "required": ["name"]
+}

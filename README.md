@@ -1,21 +1,24 @@
 <br/>
 <p align="center">
   <a href="https://github.com/@nx-fullstack/harbor-master">
-    <img src="images/cover.png" alt="Logo" height="120">
+    <img src="assets/images/cover.png" alt="Logo" height="120">
   </a>
+  <br>
+  <small>
+    <i>Chart a course for organized REST endpoints!</i>
+  </small>
+
+# @nx-fullstack/harbor-master
+
+HarborMaster is a software library that helps you define REST API URLs in a shared library so that multiple applications can read from a single source. With HarborMaster, you can navigate complex API landscapes with ease, securely guiding your data to port.
 
   <p align="center">
-    Easily add a shared style library to your Nx monorepo
-    <br/>
-    <br/>
-    <a href="https://github.com/@nx-fullstack/harbor-master"><strong>Explore the docs »</strong></a>
-    <br/>
-    <br/>
-    <a href="https://github.com/@nx-fullstack/harbor-master">View Demo</a>
-    .
-    <a href="https://github.com/@nx-fullstack/harbor-master/issues">Report Bug</a>
-    .
-    <a href="https://github.com/@nx-fullstack/harbor-master/issues">Request Feature</a>
+    <a href="https://github.com/@nx-fullstack/harbor-master">
+      Explore the docs 📘
+    </a>
+    <a href="https://github.com/@nx-fullstack/harbor-master">View Demo 🖥</a>
+    <a href="https://github.com/@nx-fullstack/harbor-master/issues">Report Bug 🐛</a>
+    <a href="https://github.com/@nx-fullstack/harbor-master/issues">Request Feature 🧰</a>
   </p>
 </p>
 
@@ -23,11 +26,8 @@
 
 ## Table Of Contents
 
-- [About the Project](#about-the-project)
 - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -35,73 +35,53 @@
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgements)
 
-## About The Project
-
-![Screen Shot](images/screenshot.png)
-
-Many full-stack applications
-
 ## Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [Nx](https://nx.dev)
-- [Stylelint](https://github.com/stylelint/stylelint)
-
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-
-```sh
-npm install npm@latest -g
-```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+#### NPM
 
-2. Clone the repo
-
-```sh
-git clone https://github.com/your_username_/Project-Name.git
+```shell
+npm install @nx-fullstack/harbor-master
 ```
 
-3. Install NPM packages
+#### Yarn
 
-```sh
-npm install
-```
-
-4. Enter your API in `config.js`
-
-```JS
-const API_KEY = 'ENTER YOUR API';
+```shell
+yarn add @nx-fullstack/harbor-master
 ```
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+#### Interactively generating a routing library
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```shell
+nx g @nx-fullstack/harbor-master:library util-routing
+```
+
+#### Generating a routing library without prompts
+
+```shell
+nx g @nx-fullstack/harbor-master:library util-routing \
+> --directory shared \
+> --resourceName users \
+> --tags type:util,scope:shared \
+> --baseUrl /api/v1
+```
 
 ## Roadmap
 
 See the [open issues](https://github.com/@nx-fullstack/harbor-master/issues) for a list of proposed features (and known issues).
 
-### Creating A Pull Request
+<!-- ### Creating A Pull Request
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+5. Open a Pull Request -->
 
 ## License
 

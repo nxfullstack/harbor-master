@@ -1,0 +1,68 @@
+import { IApiNamespaceEndpoints } from '@nx-fullstack/harbor-master';
+
+export const todoRoutes: IApiNamespaceEndpoints = {
+  baseUrl: '<%= baseUrl %>',
+  path: '/<%= resourceName %>',
+  getAll: {
+    path: '',
+    method: 'get',
+    generateUrl: () => `<%= baseUrl %>/<%= resourceName %>`,
+    headers: () => ({}),
+  },
+  getOne: {
+    path: ':id',
+    method: 'get',
+    parameters: {
+      id: {
+        required: true,
+      },
+    },
+    generateUrl: (id: string) => `<%= baseUrl %>/<%= resourceName %>/${id}`,
+    headers: (token: string): Record<string, string> => {
+      return {
+        ...(token ? { authorization: `Bearer ${token}` } : {}),
+        'content-type': `application/json`,
+        accept: `application/json`,
+      };
+    },
+  },
+  create: {
+    path: '',
+    method: 'post',
+    generateUrl: () => `<%= baseUrl %>/<%= resourceName %>`,
+    headers: () => ({}),
+  },
+  update: {
+    path: ':id',
+    method: 'patch',
+    parameters: {
+      id: {
+        required: true,
+      },
+    },
+    generateUrl: (id: string) => `<%= baseUrl %>/<%= resourceName %>/${id}`,
+    headers: () => ({}),
+  },
+  upsert: {
+    path: ':id',
+    method: 'put',
+    parameters: {
+      id: {
+        required: true,
+      },
+    },
+    generateUrl: (id: string) => `<%= baseUrl %>/<%= resourceName %>/${id}`,
+    headers: () => ({}),
+  },
+  delete: {
+    path: ':id',
+    method: 'delete',
+    parameters: {
+      id: {
+        required: true,
+      },
+    },
+    generateUrl: (id: string) => `<%= baseUrl %>/<%= resourceName %>/${id}`,
+    headers: () => ({}),
+  },
+};

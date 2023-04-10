@@ -56,7 +56,7 @@ function Home() {
         <IntroDescription />
       </header>
       <main>
-        <p>main</p>
+        <p></p>
       </main>
     </Layout>
   );

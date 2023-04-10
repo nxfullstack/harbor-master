@@ -12,18 +12,14 @@ interface IJsDocComment {
 
 const FILES = glob.sync('packages/harbor-master/src/**/*.ts');
 
-// console.log(`Getting template data...`);
-
 const res: IJsDocComment[] = jsdoc2md.getTemplateDataSync({
   files: FILES,
   configure: 'docs/jsdoc.json',
 });
 
-// console.log(`got template data, looking up categories...`);
-
 const categories = res.reduce((acc, curr) => {
   const category = curr.category?.toLowerCase();
-  console.log(`evaluating category ${category}`);
+  // console.log(`evaluating category ${category}`);
   if (category) {
     if (!acc[category]) {
       acc[category] = [];
@@ -33,7 +29,6 @@ const categories = res.reduce((acc, curr) => {
 
   return acc;
 }, {});
-// console.log(`Categories:\n${JSON.stringify(categories, null, 2)}`);
 
 const outputPath = path.join('docs', 'docs', 'harbor-master');
 if (!fs.existsSync(outputPath)) {
