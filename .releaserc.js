@@ -50,6 +50,13 @@ module.exports = {
       },
     ],
     [
+      '@semantic-release/npm',
+      {
+        pkgRoot: 'packages/harbor-master',
+        npmPublish: false,
+      },
+    ],
+    [
       '@semantic-release/github',
       {
         assets: ['dist/packages/harbor-master/*.tgz'],
