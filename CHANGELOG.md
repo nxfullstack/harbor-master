@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/nxfullstack/harbor-master/compare/v1.0.0...v1.0.1) (2023-04-10)
+
+
+### Documentation
+
+* updated plugin README ([09e716f](https://github.com/nxfullstack/harbor-master/commit/09e716f907e34bb5b74be5c88f4466a9ce1e68ee))
+
 ## 1.0.0 (2023-04-10)
 
 ### Features
