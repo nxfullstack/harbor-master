@@ -21,18 +21,14 @@ jobs:
       parallel-commands: |
         yarn nx-cloud record -- yarn nx format:check
       parallel-commands-on-agents: |
-        yarn nx lint style-lib
-        yarn nx test style-lib --ci --codeCoverage
-        yarn nx build style-lib
+        yarn nx lint harbor-master
+        yarn nx test harbor-master --ci --codeCoverage
+        yarn nx build harbor-master
       artifacts-path: |
         dist
         coverage
-        package.jsno
+        package.json
       artifacts-name: dist-and-coverage-artifacts
-      # final-commands: |
-      #   ls -la ./
-      #   ls -la dist/packages/style-lib/
-      #   npx semantic-release
 
   agents:
     name: Nx Cloud - Agents
@@ -65,8 +61,6 @@ jobs:
 
       - name: Release
         run: |
-          ls -la ./
-          ls -la dist/packages/style-lib/*
           npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
