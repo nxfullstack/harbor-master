@@ -46,13 +46,13 @@ module.exports = {
     [
       '@semantic-release/npm',
       {
-        pkgRoot: 'dist/packages/harbor',
+        pkgRoot: 'dist/packages/harbor-master',
       },
     ],
     [
       '@semantic-release/github',
       {
-        assets: ['dist/packages/harbor/*.tgz'],
+        assets: ['dist/packages/harbor-master/*.tgz'],
       },
     ],
     [
