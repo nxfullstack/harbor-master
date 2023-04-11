@@ -50,12 +50,27 @@ module.exports = {
       },
     ],
     'semantic-release-license',
+    /**
+     * - udpates the version in package.json in the built application
+     * - leaves the tarball in dist/packages (so github can pick it up)
+     * - publishes to NPM
+     */
     [
       '@semantic-release/npm',
       {
         pkgRoot: 'dist/packages/harbor-master',
+        tarballDir: 'dist/packages',
       },
     ],
+    // update the package.json in the sub-directory packages/harbor-master
+    [
+      '@semantic-release/npm',
+      {
+        pkgRoot: 'packages/harbor-master',
+        npmPublish: false,
+      },
+    ],
+    // update the root package.json version
     [
       '@semantic-release/npm',
       {
