@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/nxfullstack/harbor-master/compare/v1.0.2...v1.0.3) (2023-04-11)
+
+
+### CI/CD
+
+* more package.json fixes ([824a56e](https://github.com/nxfullstack/harbor-master/commit/824a56ee53544d355423bf9e79fd3b73580e1ffc))
+
 ## [1.0.2](https://github.com/nxfullstack/harbor-master/compare/v1.0.1...v1.0.2) (2023-04-11)
 
 ### CI/CD
