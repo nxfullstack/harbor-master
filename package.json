@@ -1,6 +1,6 @@
 {
   "name": "harbor-master",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "contributors:add": "npx all-contributors add",
