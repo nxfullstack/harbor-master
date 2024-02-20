@@ -3388,6 +3388,17 @@
   dependencies:
     "@nx/devkit" "18.0.4"
 
+"@nrwl/devkit@^15.0.0":
+  version "15.9.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-15.9.7.tgz#14d19ec82ff4209c12147a97f1cdea05d8f6c087"
+  integrity sha512-Sb7Am2TMT8AVq8e+vxOlk3AtOA2M0qCmhBzoM1OJbdHaPKc0g0UgSnWRml1kPGg5qfPk72tWclLoZJ5/ut0vTg==
+  dependencies:
+    ejs "^3.1.7"
+    ignore "^5.0.4"
+    semver "7.5.4"
+    tmp "~0.2.1"
+    tslib "^2.3.0"
+
 "@nrwl/eslint-plugin-nx@18.0.4":
   version "18.0.4"
   resolved "https://registry.yarnpkg.com/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-18.0.4.tgz#b9cef2b6f0075a17e93f11f99301b0c44f3e06d3"
@@ -3430,6 +3441,13 @@
   integrity sha512-UFD96NeEeHLKADLBDfF2U5rFOhyMjCwYzpA+D3Yp3X25aB7D89Kan4spq9ZC/Zxethz3911nNaYy+I+L5WlDoA==
   dependencies:
     "@nx/workspace" "18.0.4"
+
+"@nx-plus/docusaurus@^15.0.0-rc.0":
+  version "15.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@nx-plus/docusaurus/-/docusaurus-15.0.0-rc.0.tgz#3233637ed3678d7be491ee3c2f9fb3c6ca407f25"
+  integrity sha512-GmoYHKljQJvJLSYhWBe+huStwJbm+RbK+lC2j2sA+ZCUdkUo+P2Yv5oQGbqWU4jXclYe8pOP/qVFJs3j3Zjw/Q==
+  dependencies:
+    "@nrwl/devkit" "^15.0.0"
 
 "@nx/devkit@18.0.4":
   version "18.0.4"
@@ -13761,6 +13779,13 @@ semver-truncate@^2.0.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
+
+semver@7.5.4:
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
+  dependencies:
+    lru-cache "^6.0.0"
 
 semver@7.6.0, semver@^7.5.2, semver@^7.5.3, semver@^7.5.4:
   version "7.6.0"
