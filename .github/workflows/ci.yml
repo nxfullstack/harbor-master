@@ -39,6 +39,7 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
       number-of-agents: 3
+      node-version: "20"
 
   release:
     runs-on: ubuntu-latest
