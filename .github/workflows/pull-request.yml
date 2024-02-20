@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      
+
       - run: npx nx-cloud start-ci-run
       - run: yarn install --frozen-lockfile
 

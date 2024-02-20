@@ -7,19 +7,18 @@ on:
   # pull_request:
 
 jobs:
-
   main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: 'npm'
-      
+
       - run: npx nx-cloud start-ci-run
       - run: yarn install --frozen-lockfile
 
@@ -27,7 +26,6 @@ jobs:
 
       - run: npx nx-cloud record -- nx format:check
       - run: npx nx run-many -t lint test build --no-agents
-
 
   # main:
   #   name: Nx Cloud - Main Job
