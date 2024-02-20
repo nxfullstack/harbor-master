@@ -19,7 +19,7 @@ interface NormalizedSchema extends HarborMasterGeneratorSchema {
 
 function normalizeOptions(
   tree: Tree,
-  options: HarborMasterGeneratorSchema
+  options: HarborMasterGeneratorSchema,
 ): NormalizedSchema {
   const name = names(options.name).fileName;
   const projectDirectory = options.directory
@@ -52,7 +52,7 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
     tree,
     path.join(__dirname, 'files'),
     options.projectRoot,
-    templateOptions
+    templateOptions,
   );
 }
 
@@ -79,7 +79,7 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
  */
 export default async function (
   tree: Tree,
-  options: HarborMasterGeneratorSchema
+  options: HarborMasterGeneratorSchema,
 ) {
   const normalizedOptions = normalizeOptions(tree, options);
   addProjectConfiguration(tree, normalizedOptions.projectName, {

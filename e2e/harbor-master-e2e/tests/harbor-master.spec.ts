@@ -16,7 +16,7 @@ describe('harbor-master e2e', () => {
   beforeAll(() => {
     ensureNxProject(
       '@nx-fullstack/harbor-master',
-      'dist/packages/harbor-master'
+      'dist/packages/harbor-master',
     );
   });
 
@@ -29,7 +29,7 @@ describe('harbor-master e2e', () => {
   it('should create harbor-master', async () => {
     const project = uniq('harbor-master');
     await runNxCommandAsync(
-      `generate @nx-fullstack/harbor-master:lib ${project}`
+      `generate @nx-fullstack/harbor-master:lib ${project}`,
     );
     const result = await runNxCommandAsync(`build ${project}`);
     expect(result.stdout).toContain('Executor ran');
@@ -39,10 +39,10 @@ describe('harbor-master e2e', () => {
     it('should create src in the specified directory', async () => {
       const project = uniq('harbor-master');
       await runNxCommandAsync(
-        `generate @nx-fullstack/harbor-master:lib ${project} --directory subdir`
+        `generate @nx-fullstack/harbor-master:lib ${project} --directory subdir`,
       );
       expect(() =>
-        checkFilesExist(`libs/subdir/${project}/src/index.ts`)
+        checkFilesExist(`libs/subdir/${project}/src/index.ts`),
       ).not.toThrow();
     }, 120000);
   });
@@ -52,10 +52,10 @@ describe('harbor-master e2e', () => {
       const projectName = uniq('harbor-master');
       ensureNxProject(
         '@nx-fullstack/harbor-master',
-        'dist/packages/harbor-master'
+        'dist/packages/harbor-master',
       );
       await runNxCommandAsync(
-        `generate @nx-fullstack/harbor-master:lib ${projectName} --tags e2etag,e2ePackage`
+        `generate @nx-fullstack/harbor-master:lib ${projectName} --tags e2etag,e2ePackage`,
       );
       const project = readJson(`libs/${projectName}/project.json`);
       expect(project.tags).toEqual(['e2etag', 'e2ePackage']);

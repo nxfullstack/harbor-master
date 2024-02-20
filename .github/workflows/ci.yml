@@ -29,7 +29,7 @@ jobs:
         coverage
         package.json
       artifacts-name: dist-and-coverage-artifacts
-      node-version: "20"
+      node-version: '20'
 
   agents:
     name: Nx Cloud - Agents
@@ -39,7 +39,7 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
       number-of-agents: 3
-      node-version: "20"
+      node-version: '20'
 
   release:
     runs-on: ubuntu-latest

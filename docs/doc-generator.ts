@@ -38,7 +38,7 @@ if (!fs.existsSync(outputPath)) {
 
 for (const [category, items] of Object.entries(categories)) {
   let md = `---\nslug: /harbor-master/${category.toLowerCase()}\n---\n\n# ${capitalize(
-    category
+    category,
   )}\n\n`;
 
   md += items
@@ -61,7 +61,7 @@ function getDocsSection({ name, description, examples }) {
   const header = `### \`\`\`${name}\`\`\``;
   const sectionText = `${description}`;
   const usageText = `\`\`\`shell\n$ npm i -D @nx-fullstack/harbor-master\n\n${examples.join(
-    '\n'
+    '\n',
   )}\n\`\`\``;
 
   section += header;
