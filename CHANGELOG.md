@@ -1,3 +1,16 @@
+## [1.0.4](https://github.com/nxfullstack/harbor-master/compare/v1.0.3...v1.0.4) (2024-02-20)
+
+
+### CI/CD
+
+* added artifact collection to main workflow ([b3473f8](https://github.com/nxfullstack/harbor-master/commit/b3473f8080217c1860f63b3a244b238634342213))
+* fixed artifact name ([12941de](https://github.com/nxfullstack/harbor-master/commit/12941de1ae8a5bbe4c095093098f78e2992d919a))
+* fixed unsupported YAML anchors ([5b6013d](https://github.com/nxfullstack/harbor-master/commit/5b6013d4e923b290cedc3658e73b22c7fd492a0c))
+* reverted node versions ([02fb3b1](https://github.com/nxfullstack/harbor-master/commit/02fb3b12e753e85b0a8a643e87d6cf7e59d4e548))
+* updated node engine to 20 ([104fb8b](https://github.com/nxfullstack/harbor-master/commit/104fb8bb794b54c138bcca5ba1932e6ac2e2717b))
+* updated nx CI workflow and node engine version ([0da7c91](https://github.com/nxfullstack/harbor-master/commit/0da7c9147c9e9edc1b060b8fb8047a4712a7f069))
+* **deps:** upgraded download-artifact to v4 ([4141da1](https://github.com/nxfullstack/harbor-master/commit/4141da19235f937fbaa4ece4cc766b6b734d9abd))
+
 ## [1.0.3](https://github.com/nxfullstack/harbor-master/compare/v1.0.2...v1.0.3) (2023-04-11)
 
 ### CI/CD
