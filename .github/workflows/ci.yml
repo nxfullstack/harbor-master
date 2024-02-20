@@ -29,6 +29,7 @@ jobs:
         coverage
         package.json
       artifacts-name: dist-and-coverage-artifacts
+      node-version: "20"
 
   agents:
     name: Nx Cloud - Agents
