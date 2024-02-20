@@ -54,6 +54,8 @@
     "semantic-release-license": "^1.0.3",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
+    "typedoc": "^0.25.8",
+    "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "5.3.3"
   },
   "dependencies": {

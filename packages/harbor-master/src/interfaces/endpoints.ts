@@ -37,6 +37,9 @@ const STUB = 1;
  *
  * @export
  * @interface IHarborMasterEndpoint
+ * 
+ * @property {string} path String representation of URL path **after** the endpoint name
+ * @property {HttpMethod} method Http verb for easy reference
  */
 export interface IHarborMasterEndpoint {
   /**
@@ -120,10 +123,11 @@ export interface IHarborMasterEndpoint {
 /**
  * Used for grouping all CRUD operations on a specific resource.
  *
+ * @category Interfaces
  * @export
  * @interface IApiNamespaceEndpoints
  * @typedef {IApiNamespaceEndpoints}
- * @extends {Record<EndpointAction, IHarborMasterEndpoint>}
+ * @extends {Record<EndpointAction,IHarborMasterEndpoint>}
  */
 export interface IApiNamespaceEndpoints
   extends Record<EndpointAction, IHarborMasterEndpoint> {

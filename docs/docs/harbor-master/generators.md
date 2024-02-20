@@ -4,7 +4,7 @@ slug: /harbor-master/generators
 
 # Generators
 
-### `library`
+### ```library```
 
 Create a new, basic library containing route definitions for a REST API
 

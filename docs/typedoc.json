@@ -1,0 +1,8 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": ["../packages/harbor-master/src/index.ts"],
+    "out": "../tmp/doc",
+    "tsconfig": "../packages/harbor-master/tsconfig.lib.json",
+    "plugin": ["typedoc-plugin-markdown"],
+    "excludeExternals": true
+}

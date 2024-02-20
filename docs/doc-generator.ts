@@ -2,12 +2,23 @@ const jsdoc2md = require('jsdoc-to-markdown');
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
+const TypeDoc = require("typedoc");
+
+
+interface IJsDocCommentProperty {
+  type: {
+    "names": string[]
+  };
+  description: string;
+  name: string;
+}
 
 interface IJsDocComment {
   description?: string;
   kind?: string | 'function';
   category?: string;
   examples?: string;
+  properties?: IJsDocCommentProperty[];
 }
 
 const FILES = glob.sync('packages/harbor-master/src/**/*.ts');
@@ -18,8 +29,9 @@ const res: IJsDocComment[] = jsdoc2md.getTemplateDataSync({
 });
 
 const categories = res.reduce((acc, curr) => {
+  console.log(`\n\nCurrent comment:\n${JSON.stringify(curr,null,2)}`)
   const category = curr.category?.toLowerCase();
-  // console.log(`evaluating category ${category}`);
+  console.log(`evaluating category ${category}`);
   if (category) {
     if (!acc[category]) {
       acc[category] = [];
@@ -32,7 +44,7 @@ const categories = res.reduce((acc, curr) => {
 
 const outputPath = path.join('docs', 'docs', 'harbor-master');
 if (!fs.existsSync(outputPath)) {
-  // console.log(`Output path ${outputPath} does not exist, creating!`);
+  console.log(`Output path ${outputPath} does not exist, creating!`);
   fs.mkdirSync(outputPath);
 }
 
@@ -55,20 +67,25 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function getDocsSection({ name, description, examples }) {
+function getDocsSection({ name, description, examples, properties }) {
   let section = ``;
   const sperator = `\n\n`;
   const header = `### \`\`\`${name}\`\`\``;
   const sectionText = `${description}`;
-  const usageText = `\`\`\`shell\n$ npm i -D @nx-fullstack/harbor-master\n\n${examples.join(
+  const usageText = `\`\`\`shell\n$ npm i -D @nx-fullstack/harbor-master\n\n${examples?.join(
     '\n',
   )}\n\`\`\``;
+  // const propertyText = `\n\nProperties:\n${properties?.map((p: IJsDocCommentProperty) => `\`${p.name}\` (${p.type.names[0]}) - ${p.description}`)}\n`
 
   section += header;
   section += sperator;
   section += sectionText;
   section += sperator;
   section += usageText;
+  if (properties?.length) {
+    section += propertiesToTable(properties);
+  }
+  
 
   return section;
 }
@@ -83,4 +100,12 @@ function sortFunctions(funcA, funcB) {
   }
 
   return 0;
+}
+
+function propertiesToTable(properties: IJsDocCommentProperty[]): string {
+  const header = `\n| Property | Type | Description |\n| --- | --- | --- |\n`;
+  const body = properties.map(p => 
+    `| \`${p.name}\` | \`${p.type.names[0]}\` | ${p.description} |`
+  ).join('\n');
+  return header + body;
 }
