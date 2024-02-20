@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/nxfullstack/harbor-master/compare/v1.0.4...v1.0.5) (2024-02-20)
+
+
+### Bug Fixes
+
+* removed circular dep from harbor-master package ([07e5b68](https://github.com/nxfullstack/harbor-master/commit/07e5b68169a6e4511291fa660601fc1544455ab4))
+
 ## [1.0.4](https://github.com/nxfullstack/harbor-master/compare/v1.0.3...v1.0.4) (2024-02-20)
 
 ### CI/CD
