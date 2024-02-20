@@ -85,7 +85,7 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: dist-and-coverage-artifacts
+          name: dist-and-coverage-artifact
 
       - name: Use Node.js
         uses: actions/setup-node@v3
