@@ -7,39 +7,61 @@ on:
   # pull_request:
 
 jobs:
-  main:
-    name: Nx Cloud - Main Job
-    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.11.3
-    secrets:
-      NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    with:
-      main-branch-name: main
-      number-of-agents: 3
-      init-commands: |
-        yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
-      parallel-commands: |
-        yarn nx-cloud record -- yarn nx format:check
-      parallel-commands-on-agents: |
-        yarn nx lint harbor-master
-        yarn nx test harbor-master --ci --codeCoverage
-        yarn nx build harbor-master
-      artifacts-path: |
-        dist
-        coverage
-        package.json
-      artifacts-name: dist-and-coverage-artifacts
-      node-version: '20'
 
-  agents:
-    name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11.3
-    secrets:
-      NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    with:
-      number-of-agents: 3
-      node-version: '20'
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+      
+      - run: npx nx-cloud start-ci-run
+      - run: yarn install --frozen-lockfile
+
+      - uses: nrwl/nx-set-shas@v3
+
+      - run: npx nx-cloud record -- nx format:check
+      - run: npx nx run-many -t lint test build --no-agents
+
+
+  # main:
+  #   name: Nx Cloud - Main Job
+  #   uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.11.3
+  #   secrets:
+  #     NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+  #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  #   with:
+  #     main-branch-name: main
+  #     number-of-agents: 3
+  #     init-commands: |
+  #       yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+  #     parallel-commands: |
+  #       yarn nx-cloud record -- yarn nx format:check
+  #     parallel-commands-on-agents: |
+  #       yarn nx lint harbor-master
+  #       yarn nx test harbor-master --ci --codeCoverage
+  #       yarn nx build harbor-master
+  #     artifacts-path: |
+  #       dist
+  #       coverage
+  #       package.json
+  #     artifacts-name: dist-and-coverage-artifacts
+  #     node-version: '20'
+
+  # agents:
+  #   name: Nx Cloud - Agents
+  #   uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11.3
+  #   secrets:
+  #     NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+  #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  #   with:
+  #     number-of-agents: 3
+  #     node-version: '20'
 
   release:
     runs-on: ubuntu-latest

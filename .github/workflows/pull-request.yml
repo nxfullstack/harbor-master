@@ -19,8 +19,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      # This line enables distribution
-      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
+      
       - run: npx nx-cloud start-ci-run
       - run: yarn install --frozen-lockfile
 
