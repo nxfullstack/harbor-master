@@ -45,6 +45,7 @@ Thumbs.db
 # nx 
 migrations.json
 .nx/cache
+nx-cloud.env
 
 # Generated Docusaurus files
 .docusaurus/
