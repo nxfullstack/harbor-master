@@ -42,6 +42,10 @@ Thumbs.db
 .nvmrc
 .npmrc
 
+# nx 
+migrations.json
+.nx/cache
+
 # Generated Docusaurus files
 .docusaurus/
 .cache-loader/

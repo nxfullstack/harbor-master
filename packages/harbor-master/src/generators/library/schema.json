@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
   "$id": "HarborMaster",
   "title": "Create a shared library for defining REST API routes",
   "description": "Create a shared library for defining REST API routes",
@@ -36,5 +35,7 @@
       "description": "A directory where the project is placed"
     }
   },
-  "required": ["name"]
+  "required": [
+    "name"
+  ]
 }

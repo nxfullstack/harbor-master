@@ -5,18 +5,16 @@
   "sourceRoot": "e2e/harbor-master-e2e/src",
   "targets": {
     "e2e": {
-      "executor": "@nrwl/nx-plugin:e2e",
+      "executor": "@nx/jest:jest",
       "options": {
-        "target": "harbor-master:build",
-        "jestConfig": "e2e/harbor-master-e2e/jest.config.ts"
-      }
+        "jestConfig": "e2e/harbor-master-e2e/jest.config.ts",
+        "runInBand": true
+      },
+      "dependsOn": ["harbor-master:build"]
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["e2e/harbor-master-e2e/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   },
   "tags": [],
