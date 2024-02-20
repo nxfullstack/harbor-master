@@ -26,6 +26,19 @@ jobs:
 
       - run: npx nx-cloud record -- nx format:check
       - run: npx nx run-many -t lint test build --no-agents
+      
+      - uses: actions/upload-artifact@v4
+        with:
+          # Name of the artifact to upload.
+          # Optional. Default is 'artifact'
+          name: &artifactName dist-and-coverage-artifact
+
+          # A file, directory or wildcard pattern that describes what to upload
+          # Required.
+          path: |
+            dist
+            coverage
+            package.json
 
   # main:
   #   name: Nx Cloud - Main Job
@@ -72,7 +85,7 @@ jobs:
 
       - uses: actions/download-artifact@v3
         with:
-          name: dist-and-coverage-artifacts
+          name: *artifactName
 
       - name: Use Node.js
         uses: actions/setup-node@v3
