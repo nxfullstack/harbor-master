@@ -31,6 +31,7 @@
   "generators": "./generators.json",
   "executors": "./executors.json",
   "dependencies": {
-    "@nx-fullstack/harbor-master": "latest"
+    "@nx/devkit": "^17.0.0 || ^18.0.0",
+    "tslib": "^2.6.2"
   }
 }
